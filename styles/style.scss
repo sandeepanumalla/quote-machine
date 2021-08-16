@@ -92,4 +92,16 @@ i {
 }
 
 @media (max-width: 450px) {
+  .para_span {
+    width: 23rem !important;
+    i {
+      font-size: larger;
+    }
+    span {
+      font-size: 1.21em;
+    }
+  }
+  .author_container {
+    width: 25rem;
+  }
 }

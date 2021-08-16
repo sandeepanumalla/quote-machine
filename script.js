@@ -44,6 +44,9 @@ class GetDom {
       <span>- ${this.randomQuote.author}</span>
     </div>
     `;
+    let text = this.randomQuote.quote.split(" ").join("%20");
+    let author = this.randomQuote.author.split(" ").join("%20");
+    this.twitter.href = `https://twitter.com/intent/tweet?hashtags=quotes&amp;related=sandeep&text="${text}"%20${author}`;
 
     this.fontAwesomeIcon = this.paraContainer.children[0].children[0];
     this.quoteParagraph = this.paraContainer.children[0].children[1];
@@ -52,6 +55,13 @@ class GetDom {
       this.paraContainer.nextElementSibling.children[1].children[0];
 
     this.setStyles();
+    if (window.innerWidth <= 450) {
+      this.paraContainer.children[0].style.width = window.innerWidth - 15;
+      this.paraContainer.children[1].style.width = window.innerWidth - 15;
+      this.paraContainer.nextElementSibling.style.width =
+        window.innerWidth - 15;
+      console.log("running");
+    }
     if (this.randomQuote.quote.split(" ").length >= 24) {
       this.paraContainer.children[0].style.width = `35rem`;
       this.paraContainer.children[1].style.width = `33rem`;
