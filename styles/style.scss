@@ -52,7 +52,7 @@ i {
 
 .buttons_container {
   display: flex;
-  width: 30rem;
+  width: 27rem;
   padding: 1rem 0;
   .flex-left {
     display: flex;
@@ -89,4 +89,7 @@ i {
     font-family: "Raleway", sans-serif;
     color: white;
   }
+}
+
+@media (max-width: 450px) {
 }

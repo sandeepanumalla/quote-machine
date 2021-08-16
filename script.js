@@ -55,12 +55,11 @@ class GetDom {
     if (this.randomQuote.quote.split(" ").length >= 24) {
       this.paraContainer.children[0].style.width = `35rem`;
       this.paraContainer.children[1].style.width = `33rem`;
-      this.paraContainer.parentElement.children[1].style.width = `35rem`;
-    }
-    if (this.randomQuote.quote.split(" ").length >= 29) {
+      this.paraContainer.parentElement.children[1].style.width = `31rem`;
+    } else if (this.randomQuote.quote.split(" ").length >= 29) {
       this.paraContainer.children[0].style.width = `40rem`;
       this.paraContainer.children[1].style.width = `37rem`;
-      this.paraContainer.parentElement.children[1].style.width = `40rem`;
+      this.paraContainer.parentElement.children[1].style.width = `35rem`;
     }
   }
 }
