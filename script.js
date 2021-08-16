@@ -35,9 +35,6 @@ class GetDom {
   }
 
   manipulateDom() {
-    console.log(this.randomQuote.quote.split(" ").length);
-
-    //this.setStyles();
     this.paraContainer.innerHTML = ` 
     <div class="para_span">
       <i class="fas fa-quote-left"></i>
@@ -58,11 +55,12 @@ class GetDom {
     if (this.randomQuote.quote.split(" ").length >= 24) {
       this.paraContainer.children[0].style.width = `35rem`;
       this.paraContainer.children[1].style.width = `33rem`;
+      this.paraContainer.parentElement.children[1].style.width = `35rem`;
     }
     if (this.randomQuote.quote.split(" ").length >= 29) {
       this.paraContainer.children[0].style.width = `40rem`;
       this.paraContainer.children[1].style.width = `37rem`;
-      this.paraContainer.nextElementSibling.style.width = `40rem`;
+      this.paraContainer.parentElement.children[1].style.width = `40rem`;
     }
   }
 }
@@ -91,16 +89,16 @@ class API extends GetDom {
     this.nextQuote.addEventListener("click", () => {
       this.getNewQuote();
       this.manipulateDom();
-      console.log("this this random", this.randomQuote);
+      // console.log("this this random", this.randomQuote);
     });
 
     this.getNewQuote();
     this.manipulateDom();
-    console.log(this.randomQuote);
+    // console.log(this.randomQuote);
   }
 }
 
 let dom = new GetDom();
-//dom.manipulateDom();
+
 let api = new API();
 api.getQuotes();
