@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap");
 body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -15,26 +20,104 @@ body {
 }
 
 i {
-  font-size: 1rem;
+  font-size: x-large;
   margin-right: 0.25rem;
+  margin-right: -1rem;
 }
 
 .quote_container {
   border-radius: 5px;
-  padding: 1rem;
   background-color: white;
 }
 
 .quote_container .para_span {
   width: 30rem;
+  padding-top: 1.2rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
   text-align: center;
 }
 
 .para_span span {
   font-size: 1.75em;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   text-align: center;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
+}
+
+.author_container {
+  width: 28rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.author_container span {
+  font-size: 1.1em;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+}
+
+.buttons_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30rem;
+  padding: 1rem 0;
+}
+
+.buttons_container .flex-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buttons_container .flex-left .twitter_link i {
+  font-size: 2.5rem;
+}
+
+.buttons_container .flex-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.buttons_container .flex-right button {
+  padding: 0.7rem 1.1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.9em;
+  font-family: "Raleway", sans-serif;
+  background-color: #684646;
+  cursor: pointer;
+}
+
+.buttons_container .flex-right button:hover {
+  background-color: #665b5b;
+}
+
+.tagname p {
+  font-size: 0.8rem;
+  font-family: "Raleway", sans-serif;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

@@ -16,39 +16,62 @@ class GetDom {
   constructor() {
     this.body = document.body;
     this.quoteContainer = document.querySelector(".quote_container");
-    this.paraspan = document.querySelector(".para_span");
+    this.paraContainer = document.querySelector(".para_container");
+    this.twitter = document.querySelector(".twitter_link");
     this.nextQuote = document.querySelector(".next_quote");
-    // this.fontAwesomeIcon = document.querySelector("i");
+    this.authorContainer = document.querySelector(".author_container");
     this.quotes;
     this.randomQuote;
-    console.log(this.paraspan.classList.contains(""));
     this.randomColor = colorArray[Math.round(Math.random() * 11)];
-    console.log(this.randomQuote);
-    //
   }
   setStyles() {
     this.randomColor = colorArray[Math.round(Math.random() * 11)];
     this.body.style.backgroundColor = this.randomColor;
     this.quoteParagraph.style.color = this.randomColor;
-    //this.fontAwesomeIcon.style.color = this.randomColor;
+    this.fontAwesomeIcon.style.color = this.randomColor;
+    this.nextQuote.style.backgroundColor = this.randomColor;
+    this.authorName.style.color = this.randomColor;
+    this.twitter.style.color = this.randomColor;
   }
 
   manipulateDom() {
-    this.quoteParagraph = document.createElement("span");
-    this.quoteParagraph.classList.add("quote_text");
+    console.log(this.randomQuote.quote.split(" ").length);
+
+    //this.setStyles();
+    this.paraContainer.innerHTML = ` 
+    <div class="para_span">
+      <i class="fas fa-quote-left"></i>
+      <span class="quote_text">${this.randomQuote.quote}</span>
+    </div>
+    <div class="author_container">
+      <span>- ${this.randomQuote.author}</span>
+    </div>
+    `;
+
+    this.fontAwesomeIcon = this.paraContainer.children[0].children[0];
+    this.quoteParagraph = this.paraContainer.children[0].children[1];
+    this.authorName = this.paraContainer.children[1].children[0];
+    this.nextQuote =
+      this.paraContainer.nextElementSibling.children[1].children[0];
+
     this.setStyles();
-    console.log(this.randomQuote);
-    this.quoteParagraph.innerHTML = `
-    ${this.randomQuote.quote}`;
-    this.paraspan.appendChild(this.quoteParagraph);
+    if (this.randomQuote.quote.split(" ").length >= 24) {
+      this.paraContainer.children[0].style.width = `35rem`;
+      this.paraContainer.children[1].style.width = `33rem`;
+    }
+    if (this.randomQuote.quote.split(" ").length >= 29) {
+      this.paraContainer.children[0].style.width = `40rem`;
+      this.paraContainer.children[1].style.width = `37rem`;
+      this.paraContainer.nextElementSibling.style.width = `40rem`;
+    }
   }
 }
-
 //
 
 class API extends GetDom {
   constructor() {
     super();
+    console.log(this.randomQuote);
   }
 
   getNewQuote() {
@@ -72,11 +95,12 @@ class API extends GetDom {
     });
 
     this.getNewQuote();
+    this.manipulateDom();
     console.log(this.randomQuote);
   }
 }
 
 let dom = new GetDom();
-
+//dom.manipulateDom();
 let api = new API();
 api.getQuotes();
