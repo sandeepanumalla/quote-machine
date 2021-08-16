@@ -55,13 +55,7 @@ class GetDom {
       this.paraContainer.nextElementSibling.children[1].children[0];
 
     this.setStyles();
-    if (window.innerWidth <= 450) {
-      this.paraContainer.children[0].style.width = window.innerWidth - 15;
-      this.paraContainer.children[1].style.width = window.innerWidth - 15;
-      this.paraContainer.nextElementSibling.style.width =
-        window.innerWidth - 15;
-      console.log("running");
-    }
+
     if (this.randomQuote.quote.split(" ").length >= 24) {
       this.paraContainer.children[0].style.width = `35rem`;
       this.paraContainer.children[1].style.width = `33rem`;
